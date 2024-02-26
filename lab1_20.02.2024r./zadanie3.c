@@ -15,7 +15,7 @@ void silnia(int array[10]){
     
     for(int i = 1; i<10; i++)
     {
-        silnie[i] = array[i-1]*array[i];
+        silnie[i] = silnie[i-1]*array[i];
         printf("silnia %d to %d\n", array[i], silnie[i]);
     }
 }
