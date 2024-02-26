@@ -1,20 +1,27 @@
-
 #include <stdio.h>
 
 int main()
 {
-    int max, wynik;
+    int max;
     printf("Podaj ograniczenie: ");
     scanf("%d", &max);
-    
-    for(int i == 1; i<max; i ++)
-    {
-        if(i%3==0 && i%5==0)
-        else if(i%5==0) wynik+=i;
-        else if(i%3) wynik +=i;
-    }
+    printf("%d", liczby(max));
     
     return 0;
 }
 
-//dokończyć
+int liczby(int max)
+{
+    int wynik;
+    if(max<=0) wynik = 0;
+    else
+    {
+        for(int i = 1; i<max; i++)
+        {
+            if(i%3==0 && i%5==0) wynik +=i;
+            else if(i%5==0) wynik+=i;
+            else if(i%3==0) wynik+=i;
+        }
+    }
+    return wynik;
+}
