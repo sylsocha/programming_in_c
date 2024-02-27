@@ -31,8 +31,37 @@ int main()
                 switch(komputer)
                 {
                     case 0:
-                    break;
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    
                 }
+            case 1:
+                switch(komputer)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    
+                }
+            case 2:
+                switch(komputer)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    
+                }
+            default:
+                printf("Błędny numer figury");
         }
         
     }
