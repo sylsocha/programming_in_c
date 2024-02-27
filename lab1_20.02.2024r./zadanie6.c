@@ -1,16 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main()
 {
     char figury[3][10] = {"kamień", "papier", "nożyce"};
-    int n;
-    printf("Ile rund chcesz rozegrać?")
-    scanf("%d", &n)
+    int rundy;
+    int wyniki = 3;
     
-    float* wyniki = malloc((n+1) * sizeof(*a));
-    for(int i=0;i<3;i++){
-        printf("%s\n", figury[i]);
+    printf("Ile rund chcesz rozegrać? ");
+    scanf("%d", &rundy);
+    
+    int *tab_wyniki = malloc(rundy * sizeof(int));
+    
+    srand(time(NULL));
+    
+    for(int i=0;i<rundy;i++){
+        char los = rand();
+        printf("%d\n", los);
     }
     
     return 0;
