@@ -24,7 +24,10 @@ typedef struct
 
 float dlugoscOdcinka(Point *a, Point *b)
 {
-    return pow(((*a).x - (*b).x), 2);
+    float pierwSkladnik = pow(((*a).x - (*b).x), 2);
+    float drugiSkladnik = pow(((*a).y - (*b).y), 2);
+    return sqrt(pierwSkladnik + drugiSkladnik);
+    
 }
 
 void poleIObwod(Point *a, Point *b, Point *c, Point *d)
@@ -41,8 +44,8 @@ int main()
   Point r;
   r.x = 1;
   r.y = 4;
-  zmienWspolrzedne(&p.x, &p.y);
-  printf("%d, %d\n", p.x, p.y);
+  //zmienWspolrzedne(&p.x, &p.y);
+  //printf("%d, %d\n", p.x, p.y);
   
-  printf("%d", dlugoscOdcinka(&p, &r));
+  printf("%f", dlugoscOdcinka(&p, &r));
 }
