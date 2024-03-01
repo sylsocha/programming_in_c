@@ -3,7 +3,7 @@
 
 float doubled(float *x)
 {
-    return 2**x;
+    return 2*(*x);
 }
 
 int main()
