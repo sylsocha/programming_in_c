@@ -30,22 +30,39 @@ float dlugoscOdcinka(Point *a, Point *b)
     
 }
 
-void poleIObwod(Point *a, Point *b, Point *c, Point *d)
+void poleIObwod(Rectangle *rect)
 {
+    float ab = dlugoscOdcinka(&rect->a, &rect->b);
+    float bc = dlugoscOdcinka(&rect->b, &rect->c);
+    float cd = dlugoscOdcinka(&rect->c, &rect->d);
+    float ad = dlugoscOdcinka(&rect->a, &rect->d);
     
+    float obwod = ab+bc+cd+ad;
+    printf("%f\n", obwod);
+    
+    float pole = ab*bc;
+    printf("%f\n", pole);
 }
 
 int main()
 {
-  Point p;
-  p.x = 2;
-  p.y = 6;
+  Point t;
+  t.x = 3;
+  t.y = 8;   
+    
+    
+  Rectangle rect;
+  rect.a.x = 2;
+  rect.a.y = 6;
+  rect.b.x = 5;
+  rect.b.y = 6;
+  rect.c.x = 5;
+  rect.c.y = 1;
+  rect.d.x = 2;
+  rect.d.y = 1;
   
-  Point r;
-  r.x = 1;
-  r.y = 4;
-  //zmienWspolrzedne(&p.x, &p.y);
-  //printf("%d, %d\n", p.x, p.y);
+  zmienWspolrzedne(&t.x, &t.y);
+  printf("%d, %d\n", t.x, t.y);
   
-  printf("%f", dlugoscOdcinka(&p, &r));
+  poleIObwod(&rect);
 }
