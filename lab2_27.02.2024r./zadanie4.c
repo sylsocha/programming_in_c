@@ -5,7 +5,7 @@ typedef struct
 {
     char * imie;
     float ocena;
-    
+
 } Student;
 
 float quicksort()
@@ -15,12 +15,10 @@ float quicksort()
 
 int main()
 {
-    Student * tabStudentow;
-    tabStudentow[0].imie[0] = "Anna";
+    Student tabStudentow[100];
+    tabStudentow[0].imie = "Anna";
     tabStudentow[0].ocena = 3.5;
     printf("%s", tabStudentow[0].imie);
-    
+
     return 0;
 }
-
-// SKOŃĆZYĆ
