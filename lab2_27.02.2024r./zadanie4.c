@@ -7,13 +7,13 @@ typedef struct
 
 } Student;
 
-Student* bubblesort(Student stud[100], int rozmiar)
+Student* bubblesort(Student* stud, int rozmiar)
 {
     for(int i = 0; i<rozmiar-1; i++)
     {
-        for(int j = 0; j<rozmiar-i-1; j++)
+        for(int j = 0; j<rozmiar-1; j++)
         {
-            if(stud[i].ocena>stud[i+1].ocena)
+            if(stud[i].ocena>=stud[i+1].ocena)
             {
                 Student tymczas = stud[i];
                 stud[i] = stud[i+1];
@@ -23,6 +23,7 @@ Student* bubblesort(Student stud[100], int rozmiar)
     }
     return stud;
 }
+
 
 int main()
 {
@@ -229,12 +230,12 @@ int main()
     tabStudentow[99].imie = "Marcin";
     tabStudentow[99].ocena = 3.5;
 
-    Student* nowaTabStud = bubblesort(tabStudentow, sizeof(tabStudentow));
+    int rozmiar = sizeof(tabStudentow)/sizeof(tabStudentow[0]);
+    Student* nowaTabStud = bubblesort(tabStudentow, rozmiar);
 
     for(int i = 0; i<100; i++){
         printf("%s: %.1f\n", nowaTabStud[i].imie, nowaTabStud[i].ocena);
     }
-
 
     return 0;
 }
