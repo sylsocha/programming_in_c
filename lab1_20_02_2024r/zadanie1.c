@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 int main()
 {
     char imie[20];
