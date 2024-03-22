@@ -10,7 +10,7 @@ rename_files_recursively() {
 }
 
 remove_polish_characters() {
-    find . -depth -name '*[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*' | while read -r file; do
+    find . -depth -name '[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]' | while read -r file; do
         newname=$(echo "$file" | iconv -f UTF-8 -t ASCII//TRANSLIT | sed 'y/ąćęłńóśźżĄĆĘŁŃÓŚŹŻ/acelnoszzACELNOSZZ/')
         mv "$file" "$newname"
         echo "Renamed: $file to $newname"
