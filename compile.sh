@@ -9,7 +9,7 @@ find . -name '*.c' | while read file; do
         if grep -q '#include *<math\.h>' "$file"; then
             # Check the operating system
             if [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-                clang -o "${output_path}/${filename}.exe" "$file" -lm -lmsvcrt -lm.lib
+                clang -o "${output_path}/${filename}.exe" "$file" -lm -L/path/to/directory/containing/math/library
             else
                 clang -o "${output_path}/${filename}" "$file" -lm
                 clang -o "${output_path}/${filename}.exe" "$file" -lm
