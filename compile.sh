@@ -5,8 +5,14 @@ find . -name '*.c' | while read file; do
     if [ -f "$file" ]; then
         filename=$(basename "$file" .c)
         output_path=$(dirname "$file")
-        clang -o "${output_path}/${filename}" "$file" -lm
-        clang -o "${output_path}/${filename}.exe" "$file" -lm
+        # Check if math.h exists
+        if grep -q '#include *<math\.h>' "$file"; then
+            clang -o "${output_path}/${filename}" "$file" -lm
+            clang -o "${output_path}/${filename}.exe" "$file" -lm
+        else
+            clang -o "${output_path}/${filename}" "$file"
+            clang -o "${output_path}/${filename}.exe" "$file"
+        fi
         if [ $? -eq 0 ]; then
             echo "Compilation successful for $file"
         else
