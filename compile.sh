@@ -7,8 +7,13 @@ find . -name '*.c' | while read file; do
         output_path=$(dirname "$file")
         # Check if math.h exists
         if grep -q '#include *<math\.h>' "$file"; then
-            clang -o "${output_path}/${filename}" "$file" -lm
-            clang -o "${output_path}/${filename}.exe" "$file" -lm
+            # Check the operating system
+            if [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+                clang -o "${output_path}/${filename}.exe" "$file" -lm -lmsvcrt -lm.lib
+            else
+                clang -o "${output_path}/${filename}" "$file" -lm
+                clang -o "${output_path}/${filename}.exe" "$file" -lm
+            fi
         else
             clang -o "${output_path}/${filename}" "$file"
             clang -o "${output_path}/${filename}.exe" "$file"
