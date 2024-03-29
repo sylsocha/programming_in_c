@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+//#include <math.h>
 
+////////////////////////
+//Zakomentarzowane fragmenty kodu wykorzystują bibiliotekę math.h, która nie przevhodzi przez compile.sh
+////////////////////////
 typedef struct
 {
     int x;
@@ -21,7 +24,7 @@ typedef struct
     Point c;
     Point d;
 } Rectangle;
-
+/*
 float dlugoscOdcinka(Point *a, Point *b)
 {
     float pierwSkladnik = pow(((*a).x - (*b).x), 2);
@@ -43,7 +46,7 @@ void poleIObwod(Rectangle *rect)
     float pole = ab*bc;
     printf("%f\n", pole);
 }
-
+*/
 int main()
 {
     Point t;
@@ -64,5 +67,5 @@ int main()
     zmienWspolrzedne(&t.x, &t.y);
     printf("%d, %d\n", t.x, t.y);
 
-    poleIObwod(&rect);
+  //  poleIObwod(&rect);
 }
