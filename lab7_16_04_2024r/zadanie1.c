@@ -73,10 +73,11 @@ int main(){
 
 
     // Otwarcie pliku
-    file = fopen("C:\\Users\\no.2\\Desktop\\schools_are_for_fools\\studies\\ue\\sem4\\c v cpp\\ccpp\\lab7_16_04_2024r\\zad_1_dane.txt", "r");
+    file = fopen("lab7_16_04_2024r/zad_1_dane.txt", "r");
     if(file == NULL)
     {
         printf("Nie mozna otowrzyc pliku\n");
+        return 0;
     }
     else printf("Plik otwarto pomyslnie\n");
 
