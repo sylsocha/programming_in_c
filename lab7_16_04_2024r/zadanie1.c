@@ -68,7 +68,6 @@ int cyfra(const char * lit, int poz){   //funkcja zwracająca 1. i ostatnią cyf
 int main(){
 
     FILE *file;
-    int line_count = 0;
     int wynik = 0;
 
 
@@ -88,9 +87,6 @@ int main(){
 
     node_t * current = head;
     while(fgets(current->line, 100, file) != NULL){
-
-        line_count++;
-
         //alokacja pamięci dla kolejnego noda
         current->next = (node_t *)malloc(sizeof(node_t));
         current->next->line = (char *)malloc(sizeof(char) * 100);
