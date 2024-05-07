@@ -63,7 +63,7 @@ int main(){
     if(file == NULL)
     {
         printf("Nie mozna otowrzyc pliku\n");
-        return 0;
+        return -1;
     }
     else printf("Plik otwarto pomyslnie\n");
 
@@ -109,7 +109,7 @@ int main(){
 
         char * line = current->line;
 
-        for(int i = 0; i <= strlen(line); i++){ //zczytanie numeru gry
+        for(int i = 0; i <= strlen(line); i++){ //odczytanie numeru gry
             if(isdigit(line[5]) && line[8] == ':'){
                 current->game_num = (line[5] - '0')*100 + (line[6] - '0')*10 + (line[7] - '0');
             }
