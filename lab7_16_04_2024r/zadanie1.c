@@ -76,7 +76,7 @@ int main(){
     if(file == NULL)
     {
         printf("Nie mozna otowrzyc pliku\n");
-        return 0;
+        return -1;
     }
     else printf("Plik otwarto pomyslnie\n");
 
